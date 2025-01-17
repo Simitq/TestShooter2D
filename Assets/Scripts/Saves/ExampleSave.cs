@@ -38,7 +38,7 @@ public class ExampleSave : MonoBehaviour
             Load();
 
     }
-    private void Save()
+    public void Save()
     {
         bulletItem = GameObject.FindGameObjectsWithTag("Bullet");
         Array.Resize(ref gameData.bulletPrefSpawn, bulletItem.Length);
@@ -78,7 +78,7 @@ public class ExampleSave : MonoBehaviour
         storage.Save(gameData);
         Debug.Log("Game save");
     }
-    private void Load()
+    public void Load()
     {
         gameData = (GameData)storage.Load(new GameData());
         enemy = GameObject.FindGameObjectsWithTag("Enemy");
